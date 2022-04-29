@@ -68,3 +68,8 @@ SELECT crewNumber, city
 FROM Ships, Ports
 WHERE homePort = portName
 GROUP BY city;
+
+#Ship with the max displacement
+SELECT shipName, homePort, displacement
+FROM Ships
+WHERE displacement = (SELECT MAX(displacement) FROM Ships);
